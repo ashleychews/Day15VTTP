@@ -13,7 +13,7 @@ public class Item {
     //between 1 and 10
     @Min(value = 1, message="You must order at least 1 item")
     @Max(value = 10, message="Your cannot order more than 10 items")
-    private String quantity;
+    private Integer quantity;
     
     public String getName() {
         return name;
@@ -23,13 +23,17 @@ public class Item {
         this.name = name;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
+    @Override
+    public String toString() {
+       return "Item [name=" + name + ", quantity=" + quantity + "]";
+    }
 
 }

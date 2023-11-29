@@ -35,7 +35,6 @@ public class CartController {
 
         if (cartRepo.hasCart(name)) {
             //get the cart contents
-            
         } else {
             //else instantiate cart
 

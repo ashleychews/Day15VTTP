@@ -1,14 +1,11 @@
 package vttp.ssf.day15.day15.repositories;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 import vttp.ssf.day15.day15.Utils;
-import vttp.ssf.day15.day15.models.Item;
 
 @Repository
 public class CartRepository {
