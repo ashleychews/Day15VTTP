@@ -16,7 +16,9 @@ public class Utils {
     public static final Integer F_QUANTITY = 1;
 
     public static List<Item> getCart(HttpSession sess) {
-        List<Item> cart = (List<Item>)sess.getAttribute(ATTR_CART);
+        //get cart from session
+        List<Item> cart = (List<Item>)sess.getAttribute(ATTR_CART); 
+        //if cart is empty, create a new cart
         if (null == cart) {
             cart = new LinkedList<>();
             sess.setAttribute(ATTR_CART, cart);

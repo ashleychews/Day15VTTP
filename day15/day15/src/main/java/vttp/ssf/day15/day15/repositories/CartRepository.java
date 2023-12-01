@@ -44,9 +44,9 @@ public class CartRepository {
       for (String i: list.range(name, 0, size)) {
          String[] terms = i.split(","); //rmb its like a csv file
          Item item = new Item();
-         item.setName(terms[Utils.F_NAME]);
-         item.setQuantity(Integer.parseInt(terms[Utils.F_QUANTITY]));
-         cart.add (item);
+         item.setName(terms[Utils.F_NAME]); //set name
+         item.setQuantity(Integer.parseInt(terms[Utils.F_QUANTITY])); //set quantity
+         cart.add (item); //add item to cart
       }
       return cart; 
 
