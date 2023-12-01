@@ -76,8 +76,8 @@ public class CartController {
         System.out.printf("item: %s\n", item);
         System.out.printf("error: %b\n", bindings.hasErrors());
 
-        System.out.printf(">>> @RequestParam: %s\n", username);
-        System.out.printf(">>> @RequestBody: %s\n", body);
+        // System.out.printf(">>> @RequestParam: %s\n", username);
+        // System.out.printf(">>> @RequestBody: %s\n", body);
 
         ModelAndView mav = new ModelAndView("cart");
 
