@@ -23,7 +23,6 @@ public class CartRepository {
       return template.hasKey(name);
    }
 
-
    public void deleteCart(String name) {
       template.delete(name);
    }

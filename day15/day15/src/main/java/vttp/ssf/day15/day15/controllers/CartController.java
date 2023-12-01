@@ -65,7 +65,7 @@ public class CartController {
         // mav.addObject(ATTR_ITEM, new Item());
         // mav.setStatus(HttpStatusCode.valueOf(200));
 
-      return "redirect:/";
+        return "redirect:/";
     }
 
     @PostMapping
