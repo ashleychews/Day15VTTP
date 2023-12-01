@@ -33,7 +33,7 @@ public class CartRepository {
       cart.stream()
          .forEach(item -> {
             // first column is name, second is quantity
-            list.leftPush(name, "%s, %d".formatted(item.getName(), item.getQuantity()));
+            list.leftPush(name, "%s,%d".formatted(item.getName(), item.getQuantity()));
          });
    }
 
