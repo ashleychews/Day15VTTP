@@ -24,9 +24,10 @@ public class CartService {
         return new LinkedList<>();
     }   
 
+    //save to redis
     public void save(String name, List<Item> cart) {
-        cartRepo.deleteCart(name);
-        cartRepo.addCart(name, cart);
+        cartRepo.deleteCart(name); //deletes exisitng cart
+        cartRepo.addCart(name, cart); //replace with new cart
     }
 
 }

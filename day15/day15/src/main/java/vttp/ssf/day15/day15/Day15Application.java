@@ -15,31 +15,31 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
 @SpringBootApplication
-public class Day15Application implements CommandLineRunner {
+public class Day15Application  {
 
 
-	@Autowired @Qualifier("myredis")
+	@Autowired @Qualifier(Utils.BEAN_REDIS)
 	private RedisTemplate<String, String> template;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Day15Application.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		System.out.printf(">>> redistemplate: %s\n", template);
+	// @Override
+	// public void run(String... args) throws Exception {
+	// 	System.out.printf(">>> redistemplate: %s\n", template);
 
 		//select 0
 		// set name fred
-		ValueOperations<String, String> opsValue = template.opsForValue();
-		//opsValue.set("name", "barney");
-		opsValue.set("email", "barney@gmail.com");
-		String count = opsValue.get("count");
-		System.out.printf("count = %s\n", count);
-		String name = opsValue.get("name");
-		System.out.printf("name = %s\n", name);
+		// ValueOperations<String, String> opsValue = template.opsForValue();
+		// //opsValue.set("name", "barney");
+		// opsValue.set("email", "barney@gmail.com");
+		// String count = opsValue.get("count");
+		// System.out.printf("count = %s\n", count);
+		// String name = opsValue.get("name");
+		// System.out.printf("name = %s\n", name);
 
-		opsValue.set("promo_code", "abc123", Duration.ofSeconds(30));
+		// opsValue.set("promo_code", "abc123", Duration.ofSeconds(30));
 
 		//list
 		// ListOperations<String, String> opsList = template.opsForList();
@@ -71,15 +71,14 @@ public class Day15Application implements CommandLineRunner {
 
 
 		//Map
-		HashOperations<String, String, String> opsHash = template.opsForHash();
-		opsHash.put("c001", "name", "fred");
-		opsHash.put("c001", "email", "fred@gmail.com");
-		opsHash.put("c001", "name", "barney");
-		opsHash.put("c001", "name", "barney@gmail.com");
+		// HashOperations<String, String, String> opsHash = template.opsForHash();
+		// opsHash.put("c001", "name", "fred");
+		// opsHash.put("c001", "email", "fred@gmail.com");
+		// opsHash.put("c001", "name", "barney");
+		// opsHash.put("c001", "name", "barney@gmail.com");
 
 
-		String empName = opsHash.get("c001", "name");
-		System.out.printf(">>> empName: %s\n", empName);
+		// String empName = opsHash.get("c001", "name");
+		// System.out.printf(">>> empName: %s\n", empName);
 	}
 
-}

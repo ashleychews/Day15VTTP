@@ -41,8 +41,8 @@ public class CartRepository {
       Long size = list.size(name);
       List<Item> cart = new LinkedList<>();
       for (String i: list.range(name, 0, size)) {
-         String[] terms = i.split(","); //rmb its like a csv file
-         Item item = new Item();
+         String[] terms = i.split(","); //rmb its like a csv file -> split to name,quantity
+         Item item = new Item(); //create a new item object to store the parsed value
          item.setName(terms[Utils.F_NAME]); //set name
          item.setQuantity(Integer.parseInt(terms[Utils.F_QUANTITY])); //set quantity
          cart.add (item); //add item to cart
